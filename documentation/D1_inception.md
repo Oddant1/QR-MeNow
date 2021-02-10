@@ -19,7 +19,6 @@ and use it to share all of your information as many times as you want.
 - Young people
 - People who do a lot of networking
 # 3. Interviews Summary
-# 4. Final Value Proposition and Consumer Segments
 __Summary__: Discussed when and why this app may be useful. Said she may be interested
 if the UI were clean. Has always wanted a way to swap all social media and contact info at once.
 
@@ -75,3 +74,4 @@ __Representative quotes__
 __Assessment: Must have / Nice to have / Don't care__
 
 - don't care just in general
+# 4. Final Value Proposition and Consumer Segments
