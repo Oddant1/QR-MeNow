@@ -74,4 +74,58 @@ __Representative quotes__
 __Assessment: Must have / Nice to have / Don't care__
 
 - don't care just in general
+
+__Interviewer__: Robert Bednarek <br>
+__Interviewee__: Casey Carlton, Male, 21 years old <br>
+__When__: 2/9/2021
+
+__Consumer Segment__:
+- People looking for a job
+- Managers
+- Mom/Pop shop
+
+__Key Insights__:
+- Use of the software on a phone would be easier than on a computer
+- Name, phone number, email, work email, work place, work email should be included
+- A list view would be the best way to display the contacts
+- Security is important and don’t want unauthorized people gaining access to your information
+
+__Representative Quotes__:
+- “It sometimes can be difficult to quickly get somebody’s contact information.”
+- “Personalization would be nice.”
+- “There might be potential for stalkers so a backup plan would be helpful.”
+- “High profile people would want to use this to help manage a lot of new contacts.”
+
+__Assessment__:
+- Ability to change how long your unique QR code works for: Nice to have
+- Ability to select exactly what contact information you want to share: Must have
+- Ability to track who uses your QR code: Must have
+- Overall software: Nice to have
+
+__Interviewer__: Robert Bednarek <br>
+__Interviewee__: Hayden Fuller, Male, 20 years old <br>
+__When__: 2/9/2021
+
+__Consumer Segment__:
+- Job seekers
+- Young people/students
+
+__Key Insights__:
+- Can include YouTube channel
+- Best display would be to have the usernames with links and icons for social media and email
+- Don’t want everyone to be able to see personal phone numbers
+- App or site must be secure, don’t want random people accessing all of your information
+- Don’t want scammers accessing your information
+
+__Representative Quotes__:
+- “Sometimes I get nervous asking for contact information from new people.”
+- “A phone number is more intimate so I wouldn’t want it out there for everyone.”
+- “I would want to use the software on a phone because it’s more convenient and I always have my phone on me.”
+
+__Assessment__:
+- Ability to change how long your unique QR code works for: Must have
+- Ability to select exactly what contact information you want to share: Nice to have
+- Ability to track who uses your QR code: Nice to have
+- Overall software: Must have
+
 # 4. Final Value Proposition and Consumer Segments
