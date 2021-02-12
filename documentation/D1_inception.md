@@ -47,6 +47,34 @@ __Assessment: Must have / Nice to have / Don't care__
 - Limit QR codes to time/number of usages: Number of uses- Must have
 - RFID/ Apple Airdrop/ Samsung NFC connection: Nice to have (really wants this)
 
+__Interviewer__: Kyler <br>
+__Interviewee__: Devin O'Neal<br>
+__When__: 2/10/2021 <br>
+__Consumer Segments__:
+
+- People with who compulsively try out social media platforms
+
+__Key Insights__
+
+- Would prefer it be availble for all platforms(suggested a web app version)
+- Would like to be able to see a history of when qr codes were generated in the past
+
+__Representative quotes__
+
+- "Some people have every social media account under the sun"
+- "I just recently switched from an iphone to an android"
+
+__Assessment: Must have / Nice to have / Don't care__
+
+- Support any arbitrary contact info: Nice to have
+- Configure which contact info is shared by QR code: Must
+- Ability to post (or at least link to) QR code from elsewhere: Must
+- Limit QR codes to time/number of usages: Nice to Have
+
+__Summary__: They stated they wouldn't get a ton of use from the product and that they
+only made use of Discord and Instagram however they expressed a belief that the product
+could find a niche but dedicated userbase.
+
 __Interviewer__: Joshua Melo <br>
 __Interviewee__: Taylor Wallschlaeger <br>
 __When__: 2/11/2021 <br>
