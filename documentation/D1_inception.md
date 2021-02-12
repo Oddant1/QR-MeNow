@@ -19,7 +19,6 @@ and use it to share all of your information as many times as you want.
 - Young people
 - People who do a lot of networking
 # 3. Interviews Summary
-
 __Interviewer__: Joshua Melo <br>
 __Interviewee__: AJ Allison <br>
 __When__: 2/10/2021 <br>
@@ -73,6 +72,47 @@ __Assessment: Must have / Nice to have / Don't care__
 - Ability to post (or at least link to) QR code from elsewhere: Must have.
 - Limit QR codes to time/number of usages: Number of uses- Must have - preferably time limited.
 - RFID/ Apple Airdrop/ Samsung NFC connection: Nice to have.
+
+__Interviewer__: Gavin <br>
+__Interviewee__: Aiden  <br>
+__When__: 2/10/2021 <br>
+__Consumer Segments__:
+- Younger people
+- Tech-savvy people
+- Busy people
+
+__Key Insights__:
+- Ability to share specific information
+- Having a feature to cancel all your QR codes
+
+__Representative quotes__:
+- “I hate when I have to type in all of my own personal information on someone else phone”
+- “It sucks when you give out the wrong information”
+
+__Assessment: Must have / Nice to have / Don't care__
+- Support of sharing all relevant personal information is a must
+- An easy way to configure accounts is a must
+
+__Interviewer__: Gavin <br>
+__Interviewee__: Shane  <br>
+__When__: 2/10/2021 <br>
+__Consumer Segments__:
+- People who don’t like to type in the information
+- People who forget their phone number
+
+__Key Insights__:
+- People may not trust all of their information in a single QR code
+- A good tool for sharing information if security is kept in mind
+
+__Representative quotes__:
+- “I like this idea but how will peoples information be safe”
+- “This would be nice for sharing my information especially in a big group”
+
+__Assessment: Must have / Nice to have / Don't care__
+- Termination of any QR codes is a must
+- An easy way to configure accounts is a must
+
+__Summary__: Thought it was a decent idea and thought it had a lot of potential. Worried about security and privacy issues.
 
 __Interviewer__: Jakob Pirkl <br>
 __Interviewee__: Jacob Pruim <br>
