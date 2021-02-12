@@ -19,6 +19,63 @@ and use it to share all of your information as many times as you want.
 - Young people
 - People who do a lot of networking
 # 3. Interviews Summary
+__Summary__: Thought it was a decent idea and thought it had a lot of potential. Worried about security and privacy issues.
+
+__Interviewer__: Jakob Pirkl <br>
+__Interviewee__: Jacob Pruim <br>
+__When__: 2/9/2021 <br>
+__Consumer Segments__:
+
+- Teenagers or people with lots of social media.
+- Businesses - Large or small.
+
+__Key Insights__:
+
+- Check to see if the software exists and if so how ours can be different.
+- Much more useful on phone over computer or laptop.
+- Needs to make sure that QR codes are secure and that only information you want to show is displayed.
+
+__Representative Quotes__:
+
+- "It's like an all in one social media and business card."
+- "Sharing contact information can take a long time, especially if I'm sharing more than one."
+
+__Assessment: Must have / Nice to have / Don't care__
+
+- Supports both social media and business related info: Must
+- Only show specific info: Must
+- Limit number of QR uses or time that QR is available: Nice
+- Overall: "I would initially say inbetween Must have and Nice to have. If I had to choose it would be Nice to have."
+
+__Summary__: Didn't see the value of the social media side of things, but thought that the business side was useful. 
+
+__Interviewer__: Jakob Pirkl <br>
+__Interviewee__: Robert McClean <br>
+__When__: 2/10/2021 <br>
+__Consumer Segments__:
+
+- Businesses, more on the small to medium side.
+- Young adults to middle aged people.
+
+__Key Insights__:
+
+- Much more useful on a phone - built in camera
+- Snapchat already has similar feature: how can we differentiate
+- Need to focus a lot on person security
+
+__Represenatative Quotes__:
+
+- "Software where you can get resumes or insight into potential hires"
+- "An easier way to share phone numbers or social medias like Instagram or Facebook."
+- "Needs to have a simple and intuitive design."
+
+__Assessment: Must have / Nice to have / Don't care__
+
+- Supports both social media and business related info: Nice
+- Only shows specific info: Must
+- Limit number of QR uses or time that QR is available: Nice
+- Overall: "I don't think it's something I desperately need, but it would definitely be Nice to have."
+
 __Summary__: Discussed when and why this app may be useful. Said she may be interested
 if the UI were clean. Has always wanted a way to swap all social media and contact info at once.
 
