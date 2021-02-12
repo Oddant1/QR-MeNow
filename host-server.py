@@ -14,15 +14,15 @@ def new_student():
 def addrec():
    if request.method == 'POST':
       try:
-         nm = request.form['nm']
-         addr = request.form['add']
+         name = request.form['name']
+         address = request.form['address']
          city = request.form['city']
-         pin = request.form['pin']
+         email = request.form['email']
          
          with sql.connect("database.db") as con:
             cur = con.cursor()
             
-            cur.execute("INSERT INTO students (name,addr,city,pin) VALUES (?,?,?,?)",(nm,addr,city,pin) )
+            cur.execute("INSERT INTO students (name,addr,city,pin) VALUES (?,?,?,?)",(name,address,city,email) )
             
             con.commit()
             msg = "Record successfully added"
@@ -41,6 +41,8 @@ def list():
    
    cur = con.cursor()
    cur.execute("select * from students")
+
+
    
    rows = cur.fetchall();
    return render_template("list.html",rows = rows)
