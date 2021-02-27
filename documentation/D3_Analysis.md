@@ -1,0 +1,9 @@
+# Analysis
+## __1. System Description__
+### The problem of sharing large amounts of contact information and social media affects many young and busy people the impact of which is a lot of time wasted by the error prone process of entering in large amounts of information manually. For all people who frequently share significant amounts of contact information QR MeNow is a QR code generating webapp that allows users to share contact information efficiently; unlike manually entering in your contact information every time, QR MeNow allows users to only input their information a single time then share a single QR code from then on. QR-MeNow is also a free service that can be used by anyone with lots of contact information, social media, and more. </br>
+### The __Homepage__ can access the __Scanner__ and __Secure Sign In__ pages. The __Scanner__ will open a camera so that a QR code can be scanned. The __Secure Sign In__ will be a page that allows for a sign in with *username* and *password*. The __Secure Sign In__ will take you to the __Account Handler__ as well as the __Profile__. The __Account Handler__ allows for the creation and change of a profile. The __Profile__ page will have a *name*, *phone number*, *email*, and *other data* and can access the __QR Creator__. More data can be added with the __Profile Info__ generic area. The __Profile Library__ is the database where everyones *profiles* are stored in the *profile library*. The __QR Creator__ will take the information from the __Profile__ and create a *QR code*. The *QR code* is passed to the __QR Display__, which calls the __Temp Viewing Page__ to display the QR's information. The __QR Creator__ can also access the __QR Handler__, which allows for QR codes to be set for a limited number of *uses* or a limited amount of *time*. </br>
+
+## __2. Model__
+![](https://github.com/Oddant1/QR-MeNow/tree/main/documentation/assets/D3Model.jpeg)
+
+
