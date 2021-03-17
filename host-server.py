@@ -1,3 +1,5 @@
+from QRCode import QRCode
+
 from flask import Flask, render_template, request
 import sqlite3 as sql
 import flask_qrcode
@@ -10,6 +12,7 @@ newDatabaseEntryTemplate = "contact.html"
 showResultTemplate = "result.html"
 newQRCodeTemplate = "new-qr-code.html"
 showQRCodeTemplate = "show-qr-code.html"
+QRCodes = []
 
 @app.route('/')
 def home():
@@ -36,8 +39,12 @@ def new_student():
       fullString += "city: " + city + "\n"
       fullString += "email: " + email + "\n"
 
+      QRCodes.append(QRCode(fullString))
       return render_template("newCode.html", qrString=fullString)
 
+@app.route('/storedQRCodes')
+def stored_codes():
+   return render_template("storedQRCodes.html", qrcodes=QRCodes)
 
 @app.route('/addrec',methods = ['POST', 'GET'])
 def addrec():
@@ -47,18 +54,18 @@ def addrec():
          address = request.form['address']
          city = request.form['city']
          email = request.form['email']
-         
+
          with sql.connect("database.db") as con:
             cur = con.cursor()
-            
+
             cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
-            
+
             con.commit()
             msg = "Record successfully added"
       except:
          con.rollback()
          msg = "Error in insert operation"
-      
+
       finally:
          con.close()
          return render_template("result.html",msg = msg)
@@ -68,7 +75,7 @@ def addrec():
 def list():
    con = sql.connect("database.db")
    con.row_factory = sql.Row
-   
+
    cur = con.cursor()
    cur.execute("select * from contacts")
 
