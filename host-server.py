@@ -71,8 +71,8 @@ def addrec():
          return render_template("result.html",msg = msg)
 
 
-@app.route('/list')
-def list():
+@app.route('/contactInfoList')
+def list_contact_info():
    con = sql.connect("database.db")
    con.row_factory = sql.Row
 
