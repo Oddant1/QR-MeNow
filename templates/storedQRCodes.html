@@ -4,6 +4,10 @@
         {% for code in qrcodes %}
         <img src="{{ qrcode(code) }}">
         <br>
+        <form action="/deleteQRCode" method="post">
+            <input type="submit" name="{{loop.index}}" value="Delete"/>
+        </form>
+        <br>
         <br>
         {% endfor %}
         <h2><a href="\">go back home</a></h2>

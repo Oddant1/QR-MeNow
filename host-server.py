@@ -46,6 +46,15 @@ def new_student():
 def stored_codes():
    return render_template("storedQRCodes.html", qrcodes=QRCodes)
 
+@app.route('/deleteQRCode', methods = ['POST'])
+def delete_code():
+   # This is a bit fragile but eh it works for now
+   args = list(request.form.keys())
+   index = int(args[0]) - 1
+   code = QRCodes[index]
+   QRCodes.remove(code)
+   return render_template("storedQRCodes.html", qrcodes=QRCodes)
+
 @app.route('/addrec',methods = ['POST', 'GET'])
 def addrec():
    if request.method == 'POST':
