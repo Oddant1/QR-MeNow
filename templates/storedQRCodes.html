@@ -15,11 +15,13 @@
 				<a class="item" href="/storedQRCodes">Stored qrcodes</a>
 			</nav>
         {% for code in qrcodes %}
-        <img src="{{ qrcode(code) }}">
+        <img style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="{{ qrcode(code) }}">
         <br>
+		<div style="text-align: center;">
         <form action="/deleteQRCode" method="post">
             <input type="submit" name="{{loop.index}}" value="Delete"/>
         </form>
+		</div>
         <br>
         <br>
         {% endfor %}
