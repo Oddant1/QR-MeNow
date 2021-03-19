@@ -9,13 +9,19 @@
 
   Clone this repo with 
   
-  git clone https://github.com/Oddant1/QR-MeNow
+  '''git clone https://github.com/Oddant1/QR-MeNow
+  
+  
 
   Run the create_db.py to create the initial database
+  
+ ''' python3 create_db.py
 
   Run the host-server.py to start a local copy of the service on localhost using port 5000
 
-
+ ''' python3 host-server.py
+ 
+ Now connect to the server with a web browser.
 
   # How to use
 
