@@ -98,4 +98,4 @@ def list_contact_info():
    return render_template("listAllEntries.html",rows = rows)
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(debug = True, host='0.0.0.0', port=8080)
