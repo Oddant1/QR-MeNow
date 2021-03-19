@@ -12,6 +12,11 @@ newDatabaseEntryTemplate = "contact.html"
 showResultTemplate = "result.html"
 newQRCodeTemplate = "new-qr-code.html"
 showQRCodeTemplate = "show-qr-code.html"
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> gsn9-pr/15
 QRCodes = []
 
 
@@ -65,22 +70,39 @@ def addrec():
          city = request.form['city']
          email = request.form['email']
 
+<<<<<<< HEAD
          
          with sql.connect("database.db") as con:
             cur = con.cursor()
             
             cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
 
+=======
+         with sql.connect("database.db") as con:
+            cur = con.cursor()
+
+         
+         with sql.connect("database.db") as con:
+            cur = con.cursor()
+            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
+>>>>>>> gsn9-pr/15
             con.commit()
             msg = "Record successfully added"
       except:
          con.rollback()
          msg = "Error in insert operation"
+<<<<<<< HEAD
 
+=======
+>>>>>>> gsn9-pr/15
 
       finally:
          con.close()
          return render_template("result.html",msg = msg)
+<<<<<<< HEAD
+=======
+
+>>>>>>> gsn9-pr/15
 
 @app.route('/contactInfoList')
 def list_contact_info():
@@ -91,7 +113,10 @@ def list_contact_info():
    cur.execute("select * from contacts")
 
    rows = cur.fetchall();
+<<<<<<< HEAD
 
+=======
+>>>>>>> gsn9-pr/15
    return render_template("listAllEntries.html",rows = rows)
 
 if __name__ == '__main__':
