@@ -4,19 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <title>QR-MeNow</title>
-    <link rel="stylesheet" href="static/contact.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='contact.css') }}">
   </head>
    <body>
      <nav class="nav-bar">
-        <a class="item" href="/home.html">Home</a>
+        <a class="item" href="/">Home</a>
         <a class="item" href="/enternew">New Entry</a>
         <a class="item" href="/contactInfoList">View Contact Info List</a>
         <a class="item" href="/genQRCode">Generate a new qrcode</a>
         <a class="item" href="/storedQRCodes">Stored qrcodes</a>
      </nav>
      <div class="fillform">
-
-
        <form action = "/newCode" method = "POST">
           <h3>Contact Information</h3>
           Name<br>
