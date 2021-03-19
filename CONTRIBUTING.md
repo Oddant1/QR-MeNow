@@ -46,4 +46,4 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under its MIT License.
+By contributing, you agree that your contributions will be licensed under the [MIT License](https://github.com/Oddant1/QR-MeNow/blob/main/LICENSE).
