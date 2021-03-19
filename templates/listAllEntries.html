@@ -6,15 +6,17 @@
             <td>Name</td>
             <td>Address</td>
             <td>city</td>
-            <td>Pincode</td>
+            <td>Email</td>
          </thead>
          
          {% for row in rows %}
             <tr>
+               {% if row["name"]  %}
                <td>{{row["name"]}}</td>
+               {% endif %}
                <td>{{row["addr"]}}</td>
                <td> {{ row["city"]}}</td>
-               <td>{{row['pin']}}</td>	
+               <td>{{row['email']}}</td>
             </tr>
          {% endfor %}
       </table>
