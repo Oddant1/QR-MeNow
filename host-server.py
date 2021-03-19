@@ -66,9 +66,6 @@ def addrec():
 
          with sql.connect("database.db") as con:
             cur = con.cursor()
-
-            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
-
             con.commit()
             msg = "Record successfully added"
       except:
@@ -90,7 +87,7 @@ def list_contact_info():
 
    rows = cur.fetchall();
 
-   return render_template("list.html",rows = rows)
+   return render_template("listAllEntries.html",rows = rows)
 
 if __name__ == '__main__':
    app.run(debug = True)
