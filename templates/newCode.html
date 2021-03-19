@@ -1,6 +1,19 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <title>QR-MeNow</title>
+    <link rel="stylesheet" href="static/contact.css">
+  </head>
    <body>
+     <nav class="nav-bar">
+        <a class="item" href="/home.html">Home</a>
+        <a class="item" href="/enternew">New Entry</a>
+        <a class="item" href="/contactInfoList">View Contact Info List</a>
+        <a class="item" href="/genQRCode">Generate a new qrcode</a>
+        <a class="item" href="/storedQRCodes">Stored qrcodes</a>
+     </nav>
       <img src="{{ qrcode( qrString ) }}">
       <h2><a href = "\">go back to home page</a></h2>
    </body>
