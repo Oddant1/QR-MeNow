@@ -1,7 +1,4 @@
 .idea
-<<<<<<< HEAD
 __pycache__
 database.db
-=======
-__pycache__
->>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
+
