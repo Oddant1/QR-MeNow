@@ -14,6 +14,7 @@ newQRCodeTemplate = "new-qr-code.html"
 showQRCodeTemplate = "show-qr-code.html"
 QRCodes = []
 
+
 @app.route('/')
 def home():
    return render_template("home.html")
@@ -64,18 +65,22 @@ def addrec():
          city = request.form['city']
          email = request.form['email']
 
+         
          with sql.connect("database.db") as con:
             cur = con.cursor()
+            
+            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
+
             con.commit()
             msg = "Record successfully added"
       except:
          con.rollback()
          msg = "Error in insert operation"
 
+
       finally:
          con.close()
          return render_template("result.html",msg = msg)
-
 
 @app.route('/contactInfoList')
 def list_contact_info():
