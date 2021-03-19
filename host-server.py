@@ -67,15 +67,6 @@ def addrec():
 
          with sql.connect("database.db") as con:
             cur = con.cursor()
-            
-            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
-
-         with sql.connect("database.db") as con:
-            cur = con.cursor()
-
-         
-         with sql.connect("database.db") as con:
-            cur = con.cursor()
             cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
             con.commit()
             msg = "Record successfully added"
@@ -97,5 +88,21 @@ def list_contact_info():
    rows = cur.fetchall();
    return render_template("listAllEntries.html",rows = rows)
 
+
+def intialDatabaseCreation():
+   conn = sql.connect('database.db')
+   print("Opened database successfully");
+
+   conn.execute('CREATE TABLE contacts (name TEXT, addr TEXT, city TEXT, email TEXT)')
+   conn.execute('CREATE TABLE qrCodes (account TEXT, query TEXT, uses integer )')
+   print("Table created successfully");
+   conn.close()
+
 if __name__ == '__main__':
+   # Create database if not already created
+   try:
+        intialDatabaseCreation()
+   except:
+      print("Database Already Created")
+
    app.run(debug = True, host='0.0.0.0', port=8080)
