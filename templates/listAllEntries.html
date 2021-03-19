@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-<<<<<<< HEAD
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
@@ -15,9 +14,6 @@
          <a class="item" href="/genQRCode">Generate a new qrcode</a>
          <a class="item" href="/storedQRCodes">Stored qrcodes</a>
       </nav>
-=======
-   <body>
->>>>>>> c67ecd9
       <table border = 1>
          <thead>
             <td>Name</td>
@@ -25,20 +21,13 @@
             <td>city</td>
             <td>Email</td>
          </thead>
-<<<<<<< HEAD
-=======
-         
->>>>>>> c67ecd9
+
          {% for row in rows %}
             <tr>
                <td>{{row["name"]}}</td>
                <td>{{row["addr"]}}</td>
                <td> {{ row["city"]}}</td>
                <td>{{row['email']}}</td>
-<<<<<<< HEAD
-               <td>{{row['pin']}}</td>
-=======
->>>>>>> c67ecd9
             </tr>
          {% endfor %}
       </table>
