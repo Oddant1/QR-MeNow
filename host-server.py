@@ -12,7 +12,10 @@ newDatabaseEntryTemplate = "contact.html"
 showResultTemplate = "result.html"
 newQRCodeTemplate = "new-qr-code.html"
 showQRCodeTemplate = "show-qr-code.html"
+<<<<<<< HEAD
 QRCodes = []
+=======
+>>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
 
 @app.route('/')
 def home():
@@ -39,6 +42,7 @@ def new_student():
       fullString += "city: " + city + "\n"
       fullString += "email: " + email + "\n"
 
+<<<<<<< HEAD
       QRCodes.append(QRCode(fullString))
       return render_template("newCode.html", qrString=fullString)
 
@@ -54,6 +58,10 @@ def delete_code():
    code = QRCodes[index]
    QRCodes.remove(code)
    return render_template("storedQRCodes.html", qrcodes=QRCodes)
+=======
+      return render_template("newCode.html", qrString=fullString)
+
+>>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
 
 @app.route('/addrec',methods = ['POST', 'GET'])
 def addrec():
@@ -63,18 +71,35 @@ def addrec():
          address = request.form['address']
          city = request.form['city']
          email = request.form['email']
+<<<<<<< HEAD
 
          with sql.connect("database.db") as con:
             cur = con.cursor()
+=======
+         
+         with sql.connect("database.db") as con:
+            cur = con.cursor()
+            
+            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
+            
+>>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
             con.commit()
             msg = "Record successfully added"
       except:
          con.rollback()
          msg = "Error in insert operation"
+<<<<<<< HEAD
 
       finally:
          con.close()
          return render_template("result.html",msg = msg)
+=======
+      
+      finally:
+         con.close()
+         return render_template("result.html",msg = msg)
+
+>>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
 
 
 @app.route('/contactInfoList')
@@ -87,7 +112,11 @@ def list_contact_info():
 
    rows = cur.fetchall();
 
+<<<<<<< HEAD
    return render_template("listAllEntries.html",rows = rows)
+=======
+   return render_template("list.html",rows = rows)
+>>>>>>> 8a156d95ac4cfc398090b693d794b9a3dda30982
 
 if __name__ == '__main__':
    app.run(debug = True)
