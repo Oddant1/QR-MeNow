@@ -27,6 +27,10 @@ def new_contact():
 def new_qrCode():
    return render_template("genQRCode.html")
 
+@app.route('/sqlTest')
+def new_Sql_Query():
+   return render_template("sqlTest.html")
+
 @app.route('/newCode', methods = ['POST', 'GET'])
 def new_student():
    if request.method == 'POST':
@@ -36,12 +40,25 @@ def new_student():
       email = request.form['email']
 
       fullString = "Name: " + name + "\n"
-      fullString += "address: " + address + "\n"
-      fullString += "city: " + city + "\n"
-      fullString += "email: " + email + "\n"
+      fullString += "Address: " + address + "\n"
+      fullString += "City: " + city + "\n"
+      fullString += "Email: " + email + "\n"
 
       QRCodes.append(QRCode(fullString))
       return render_template("newCode.html", qrString=fullString)
+
+
+@app.route('/QueryResult', methods = ['POST', 'GET'])
+def queryDatabase():
+   if request.method == 'POST':
+      sqlQuery = str(request.form['sql'])
+      with sql.connect("database.db") as con:
+         cur = con.cursor()
+         print("Query: " + sqlQuery)
+         cur.execute(sqlQuery)
+         queryResult = cur.fetchall()
+         print("Result: "+ str(queryResult))
+      return render_template("newCode.html", qrString=queryResult)
 
 @app.route('/storedQRCodes')
 def stored_codes():
