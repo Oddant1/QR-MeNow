@@ -5,7 +5,7 @@
 The problem of sharing large amounts of contact information and social media affects many young and busy people the impact of which is a lot of time wasted by the error prone process of entering in large amounts of information manually. For all people who frequently share significant amounts of contact information QR MeNow is a QR code generating webapp that allows users to share contact information efficiently; unlike manually entering in your contact information every time, QR MeNow allows users to only input their information a single time then share a single QR code from then on. QR-MeNow is also a free service that can be used by anyone with lots of contact information, social media, and more.
 
 ## 2. Architecture 
-![](https://github.com/Oddant1/QR-MeNow/blob/main/documentation/assets/D5ArchitectureDiagram.JPG)
+![](https://github.com/Oddant1/QR-MeNow/blob/main/documentation/assets/D5ArchitectureDiagram.JPG.png)
 
 The server and the app are our two primary modules. The server stores the user data in a database, and it stores the QR codes themselves on disk. The server also executes the code that actually generates QR codes. This allows the server to have access to and manage all data. The application provides a user interface to enter data into the database, generate QR codes, and view QR codes. The user has access to the application, but their interaction with the server is strictly limited to adding to their database and selecting data to generate a QR code with.
 
