@@ -1,8 +1,9 @@
-from QRCode import QRCode
+from qrCode import QRCode
 
 from flask import Flask, render_template, request
 import sqlite3 as sql
 import flask_qrcode
+import userProfile
 app = Flask(__name__)
 qrcode = flask_qrcode.QRcode(app)
 
@@ -20,30 +21,36 @@ def home():
    return render_template("home.html")
 
 @app.route('/enternew')
-def new_contact():
+def newContact():
+   # returns the page for entering a new contact
    return render_template("contact.html")
 
 @app.route('/genQRCode')
-def new_qrCode():
+def newQRCode():
+   # returns the page for generating a new qr code
    return render_template("genQRCode.html")
 
 @app.route('/sqlTest')
-def new_Sql_Query():
+def newSQLQuery():
+   # give a page where you can enter a sql query(yay for injection)
    return render_template("sqlTest.html")
 
 @app.route('/newCode', methods = ['POST', 'GET'])
-def new_student():
+def newStudent():
    if request.method == 'POST':
+      # read in the post request with all of its information
       name = request.form['name']
       address = request.form['address']
       city = request.form['city']
       email = request.form['email']
 
+      # append the gleaned information to a string
       fullString = "Name: " + name + "\n"
       fullString += "Address: " + address + "\n"
       fullString += "City: " + city + "\n"
       fullString += "Email: " + email + "\n"
 
+      # render a qr code based on this thing
       QRCodes.append(QRCode(fullString))
       return render_template("newCode.html", qrString=fullString)
 
@@ -51,6 +58,7 @@ def new_student():
 @app.route('/QueryResult', methods = ['POST', 'GET'])
 def queryDatabase():
    if request.method == 'POST':
+      # read in the sql query from the post request
       sqlQuery = str(request.form['sql'])
       with sql.connect("database.db") as con:
          cur = con.cursor()
@@ -67,6 +75,7 @@ def stored_codes():
 @app.route('/deleteQRCode', methods = ['POST'])
 def delete_code():
    # This is a bit fragile but eh it works for now
+
    args = list(request.form.keys())
    index = int(args[0]) - 1
    code = QRCodes[index]
@@ -74,15 +83,17 @@ def delete_code():
    return render_template("storedQRCodes.html", qrcodes=QRCodes)
 
 @app.route('/addrec',methods = ['POST', 'GET'])
-def addrec():
+def add_record():
    if request.method == 'POST':
       try:
+         # read in the post request
          name = request.form['name']
          address = request.form['address']
          city = request.form['city']
          email = request.form['email']
 
          with sql.connect("database.db") as con:
+            # read i
             cur = con.cursor()
             cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
             con.commit()
@@ -106,10 +117,9 @@ def list_contact_info():
    return render_template("listAllEntries.html",rows = rows)
 
 
-def intialDatabaseCreation():
+def intial_database_creation():
    conn = sql.connect('database.db')
    print("Opened database successfully");
-
    conn.execute('CREATE TABLE contacts (name TEXT, addr TEXT, city TEXT, email TEXT)')
    conn.execute('CREATE TABLE qrCodes (account TEXT, query TEXT, uses integer )')
    print("Table created successfully");
@@ -118,7 +128,7 @@ def intialDatabaseCreation():
 if __name__ == '__main__':
    # Create database if not already created
    try:
-        intialDatabaseCreation()
+        intial_database_creation()
    except:
       print("Database Already Created")
 
