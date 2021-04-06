@@ -1,8 +1,7 @@
 from userProfile import *
 
-
-def make_user_profile(first_name, last_name, phone_number, address, email):
-    user = profile(first_name, last_name, phone_number, address, email)
+def makeUserProfile(firstName, lastName, phoneNumber, address, email):
+    user = profile(firstName, lastName, phoneNumber, address, email)
     return user
 
 
