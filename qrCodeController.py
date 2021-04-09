@@ -9,7 +9,7 @@ class controller:
     address = getAddress()
     email = getEmail()
 
-    user = make_user_profile(firstName, lastName, phone, address, email)
+    user = makeUserProfile(firstName, lastName, phone, address, email)
     
     def pauseCode(user):
         user.deleteQR()
@@ -17,16 +17,13 @@ class controller:
     def resumeCode(user):
         user.generateQR()
 
-    def checkNumUses(user, numUses):
-        if check current number of qr visits >= numUses
-
-    def changeTimeLeft(user, timeMin):
+    def changeTimeRemaining(user, timeMin):
         timeInSeconds = timeMin * 60
         countdownToRemove(timeInSeconds)
 
-    def countdownToRemove(timeSec)
+    def countdownToRemove(timeSec):
         
-        while timeSec:
+        while timeSec > 0:
             minute, second = divmod(timeSec, 60)
             timer = '{:02d}:{:02d}'.format(minute, second)
             time.sleep(1)
