@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 import sqlite3 as sql
 import flask_qrcode
 import userProfile
+import databaseOps
 app = Flask(__name__)
 qrcode = flask_qrcode.QRcode(app)
 
@@ -36,7 +37,7 @@ def newSQLQuery():
    return render_template("sqlTest.html")
 
 @app.route('/newCode', methods = ['POST', 'GET'])
-def newStudent():
+def newCode():
    if request.method == 'POST':
       # read in the post request with all of its information
       name = request.form['name']
@@ -60,20 +61,15 @@ def queryDatabase():
    if request.method == 'POST':
       # read in the sql query from the post request
       sqlQuery = str(request.form['sql'])
-      with sql.connect("database.db") as con:
-         cur = con.cursor()
-         print("Query: " + sqlQuery)
-         cur.execute(sqlQuery)
-         queryResult = cur.fetchall()
-         print("Result: "+ str(queryResult))
-      return render_template("newCode.html", qrString=queryResult)
+      sqlResult = databaseOps.queryDatabaseBySqlString( sqlQuery )
+      return render_template("newCode.html", qrString=sqlResult)
 
 @app.route('/storedQRCodes')
-def stored_codes():
+def storedCodes():
    return render_template("storedQRCodes.html", qrcodes=QRCodes)
 
 @app.route('/deleteQRCode', methods = ['POST'])
-def delete_code():
+def deleteCode():
    # This is a bit fragile but eh it works for now
 
    args = list(request.form.keys())
@@ -83,30 +79,18 @@ def delete_code():
    return render_template("storedQRCodes.html", qrcodes=QRCodes)
 
 @app.route('/addrec',methods = ['POST', 'GET'])
-def add_record():
+def addRecord():
    if request.method == 'POST':
-      try:
-         # read in the post request
-         name = request.form['name']
-         address = request.form['address']
-         city = request.form['city']
-         email = request.form['email']
-
-         with sql.connect("database.db") as con:
-            # read i
-            cur = con.cursor()
-            cur.execute("INSERT INTO contacts (name,addr,city,email) VALUES (?,?,?,?)",(name,address,city,email) )
-            con.commit()
-            msg = "Record successfully added"
-      except:
-         con.rollback()
-         msg = "Error in insert operation"
-      finally:
-         con.close()
-         return render_template("result.html",msg = msg)
+      # read in the post request
+      name = request.form['name']
+      address = request.form['address']
+      city = request.form['city']
+      email = request.form['email']
+      databaseReponseMessage = databaseOps.addDatabaseEntry(name, address, city, email)
+      return render_template("result.html",msg = databaseReponseMessage)
 
 @app.route('/contactInfoList')
-def list_contact_info():
+def listContactInfo():
    con = sql.connect("database.db")
    con.row_factory = sql.Row
 
@@ -117,18 +101,10 @@ def list_contact_info():
    return render_template("listAllEntries.html",rows = rows)
 
 
-def intial_database_creation():
-   conn = sql.connect('database.db')
-   print("Opened database successfully");
-   conn.execute('CREATE TABLE contacts (name TEXT, addr TEXT, city TEXT, email TEXT)')
-   conn.execute('CREATE TABLE qrCodes (account TEXT, query TEXT, uses integer )')
-   print("Table created successfully");
-   conn.close()
-
 if __name__ == '__main__':
    # Create database if not already created
    try:
-        intial_database_creation()
+        databaseOps.intialDatabaseCreation()
    except:
       print("Database Already Created")
 
