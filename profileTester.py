@@ -1,4 +1,4 @@
-from user_profile_handler import *
+from userProfile
 
 Test2 = make_user_profile('testFirstName2', 'TestLastName2', 'TestPhone2', 'TestAddress2', 'TestEmail2')
 Test2.generate_qr()

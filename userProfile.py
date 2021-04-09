@@ -1,7 +1,10 @@
 import qrcode
 import os
+
+
 class profile:
-    def __init__(self,first_name, last_name, phone_number, address, email):
+
+    def __init__(self, first_name, last_name, phone_number, address, email):
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number
@@ -9,14 +12,14 @@ class profile:
         self.email = email
 
     def generate_qr(self):
-        qr = qrcode.QRCode( version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4 )
+        qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4)
         qr.add_data(self.first_name + "\n")
         qr.add_data(self.last_name + "\n")
         qr.add_data(self.phone_number + "\n")
         qr.add_data(self.address + "\n")
         qr.add_data(self.email + "\n")
-        qr.make(fit = True)
-        img = qr.make_image(fillcolor = "black", back_color = "white")
+        qr.make(fit=True)
+        img = qr.make_image(fillcolor="black", back_color="white")
         img.save(f'qrcodes/{self.first_name}.png')
 
     def delete_qr(self):
