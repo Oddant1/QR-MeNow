@@ -17,24 +17,26 @@
       <a class="item" href="/storedQRCodes">Stored qrcodes</a>
       <a class="item" href="/logout">Log out</a>
    </nav>
-         <table style="margin: auto;" border = 1>
-               <thead>
-                   <td>First Name</td>
-                   <td>Last Name</td>
-                   <td>Phone number</td>
-                   <td>Address</td>
-                   <td>Email</td>
-                </thead>
+      <div class="centered">
+      <table border = 1>
+      <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Phone number</td>
+            <td>Address</td>
+            <td>Email</td>
+         </thead>
 
-                {% for row in rows %}
-                   <tr>
-                      <td>{{row["fname"]}}</td>
-                      <td>{{row["lname"]}}</td>
-                      <td>{{row["phonenumber"]}}</td>
-                      <td> {{ row["addr"]}}</td>
-                      <td>{{row['email']}}</td>
-                   </tr>
-                {% endfor %}
-             </table>
+         {% for row in rows %}
+            <tr>
+               <td>{{row["fname"]}}</td>
+               <td>{{row["lname"]}}</td>
+               <td>{{row["phonenumber"]}}</td>
+               <td>{{row["addr"]}}</td>
+               <td>{{row['email']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      </div>
    </body>
 </html>
