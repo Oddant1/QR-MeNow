@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-		<title>QR-MeNow</title>
-		<link rel="stylesheet" href="{{ url_for('static',filename='homePage.css') }}">
-	</head>
-		<body>
-			<nav class="nav-bar">
-			   <a class="item" href="/">Home</a>
-			   <a class="item" href="/enternew">New Entry</a>
-			   <a class="item" href="/contactInfoList">View Contact Info List</a>
-			   <a class="item" href="/genQRCode">Generate a new qrcode</a>
-				<a class="item" href="/storedQRCodes">Stored qrcodes</a>
-			</nav>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>QR-MeNow</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='generic.css') }}">
+    </head>
+        <body>
+        <nav class="nav-bar">
+            <a class="item" href="/">Home</a>
+            <a class="item" href="/logIn">Log in</a>
+            <a class="item" href="/signUp">Create an account</a>
+            <a class="item" href="/enternew">New Entry</a>
+            <a class="item" href="/contactInfoList">View Contact Info List</a>
+            <a class="item" href="/genQRCode">Generate a new qrcode</a>
+            <a class="item" href="/storedQRCodes">Stored qrcodes</a>
+            <a class="item" href="/logout">Log out</a>
+        </nav>
         {% for code in qrcodes %}
-        <img style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="{{ qrcode(code) }}">
+        <img class="centered" src="{{ qrcode(code) }}">
         <br>
-		<div style="text-align: center;">
+        <div class="fillform">
         <form action="/deleteQRCode" method="post">
             <input type="submit" name="{{loop.index}}" value="Delete"/>
         </form>
-		</div>
+        </div>
         <br>
         <br>
         {% endfor %}
-        <h2><a href="\">go back home</a></h2>
     </body>
 </html>

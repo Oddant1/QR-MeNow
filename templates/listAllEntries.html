@@ -1,38 +1,42 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-		<title>QR-MeNow</title>
-		<link rel="stylesheet" href="{{ url_for('static',filename='contact.css') }}">
-	</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>QR-MeNow</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='generic.css') }}">
+    </head>
    <body>
-      <nav class="nav-bar">
-         <a class="item" href="/">Home</a>
-         <a class="item" href="/enternew">New Entry</a>
-         <a class="item" href="/contactInfoList">View Contact Info List</a>
-         <a class="item" href="/genQRCode">Generate a new qrcode</a>
-         <a class="item" href="/storedQRCodes">Stored qrcodes</a>
-      </nav>
-         <table style="margin: auto;" border = 1>
-               <thead>
-                   <td>First Name</td>
-                   <td>Last Name</td>
-                   <td>Phone number</td>
-                   <td>Address</td>
-                   <td>Email</td>
-                </thead>
+   <nav class="nav-bar">
+      <a class="item" href="/">Home</a>
+      <a class="item" href="/logIn">Log in</a>
+      <a class="item" href="/signUp">Create an account</a>
+      <a class="item" href="/enternew">New Entry</a>
+      <a class="item" href="/contactInfoList">View Contact Info List</a>
+      <a class="item" href="/genQRCode">Generate a new qrcode</a>
+      <a class="item" href="/storedQRCodes">Stored qrcodes</a>
+      <a class="item" href="/logout">Log out</a>
+   </nav>
+      <div class="centered">
+      <table border = 1>
+      <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Phone number</td>
+            <td>Address</td>
+            <td>Email</td>
+         </thead>
 
-                {% for row in rows %}
-                   <tr>
-                      <td>{{row["fname"]}}</td>
-                      <td>{{row["lname"]}}</td>
-                      <td>{{row["phonenumber"]}}</td>
-                      <td> {{ row["addr"]}}</td>
-                      <td>{{row['email']}}</td>
-                   </tr>
-                {% endfor %}
-             </table>
-   <h2><a href = "/">Go back to home page</a></h2>
+         {% for row in rows %}
+            <tr>
+               <td>{{row["fname"]}}</td>
+               <td>{{row["lname"]}}</td>
+               <td>{{row["phonenumber"]}}</td>
+               <td>{{row["addr"]}}</td>
+               <td>{{row['email']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      </div>
    </body>
 </html>
