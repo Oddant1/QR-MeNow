@@ -14,23 +14,25 @@
          <a class="item" href="/genQRCode">Generate a new qrcode</a>
          <a class="item" href="/storedQRCodes">Stored qrcodes</a>
       </nav>
-      <table style="margin: auto;" border = 1>
-         <thead>
-            <td>Name</td>
-            <td>Address</td>
-            <td>city</td>
-            <td>Email</td>
-         </thead>
+         <table style="margin: auto;" border = 1>
+               <thead>
+                   <td>First Name</td>
+                   <td>Last Name</td>
+                   <td>Phone number</td>
+                   <td>Address</td>
+                   <td>Email</td>
+                </thead>
 
-         {% for row in rows %}
-            <tr>
-               <td>{{row["name"]}}</td>
-               <td>{{row["addr"]}}</td>
-               <td> {{ row["city"]}}</td>
-               <td>{{row['email']}}</td>
-            </tr>
-         {% endfor %}
-      </table>
+                {% for row in rows %}
+                   <tr>
+                      <td>{{row["fname"]}}</td>
+                      <td>{{row["lname"]}}</td>
+                      <td>{{row["phonenumber"]}}</td>
+                      <td> {{ row["addr"]}}</td>
+                      <td>{{row['email']}}</td>
+                   </tr>
+                {% endfor %}
+             </table>
    <h2><a href = "/">Go back to home page</a></h2>
    </body>
 </html>
