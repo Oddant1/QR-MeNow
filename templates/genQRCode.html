@@ -14,22 +14,29 @@
         <a class="item" href="/genQRCode">Generate a new qrcode</a>
         <a class="item" href="/storedQRCodes">Stored qrcodes</a>
      </nav>
-     <div class="fillform">
-       <form action = "/newCode" method = "POST">
-          <h3>Contact Information</h3>
-          Name<br>
-          <input type = "text" name ="name"/></br>
+     <div class="user info">
+        <table style="margin: auto;" border = 1>
+               <thead>
+                   <td>First Name</td>
+                   <td>Last Name</td>
+                   <td>Phone number</td>
+                   <td>Address</td>
+                   <td>Email</td>
+                </thead>
 
-          Address<br>
-          <textarea name = "address" ></textarea><br>
-
-          City<br>
-          <input type = "text" name = "city" /><br>
-
-          Email<br>
-          <input type = "text" name = "email" /><br>
-          <input type = "submit" value = "submit" /><br>
-       </form>
+                {% for row in rows %}
+                   <tr>
+                      <td>{{row["fname"]}}</td>
+                      <td>{{row["lname"]}}</td>
+                      <td>{{row["phonenumber"]}}</td>
+                      <td> {{ row["addr"]}}</td>
+                      <td>{{row['email']}}</td>
+                   </tr>
+                {% endfor %}
+            <form action = "{{ url_for('newCode') }}" method = "POST">
+             <input type="submit" class="button" value="Generate Code"/>
+            </form>
+             </table>
      </div>
    </body>
 </html>

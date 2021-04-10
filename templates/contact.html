@@ -14,23 +14,28 @@
         <a class="item" href="/genQRCode">Generate a new qrcode</a>
         <a class="item" href="/storedQRCodes">Stored qrcodes</a>
      </nav>
-     <div class="fillform">
-
-
-         <form action = "{{ url_for('addrec') }}" method = "POST">
+     <div class="user profile info">
+         <form action = "{{ url_for('addRecord') }}" method = "POST">
             <h3>Contact Information</h3>
-            Name
-            <br>
-            <input type = "text" name ="name"/><br>
 
-            Address<br>
-            <textarea name = "address" ></textarea><br>
+            First Name<br>
+            <input type = "text" first name ="firstName"/><br>
 
-            City<br>
-            <input type = "text" name = "city" /><br>
+             Last Name<br>
+           <input type = "text" Last name ="lastName"/><br>
 
-            Email<br>
-            <input type = "text" name = "email" /><br>
+             number<br>
+             <input type="tel" id="phone" name="phone" /></br>
+
+            Address
+             <br>
+            <textarea name = "address" > </textarea><br>
+
+            Email
+             <br>
+            <input type = "text" name = "email" />
+             <br>
+
             <input type = "submit" value = "submit" /><br>
          </form>
      </div>
