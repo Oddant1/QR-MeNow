@@ -65,6 +65,24 @@ a.item {
   text-transform: uppercase;
 }
 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+}
+
+.left, .right {
+  width: 10%;
+}
+
+.middle {
+  width: 80%;
+}
+
 div.fillform {
   margin: 0 auto;
   width: 10%;
