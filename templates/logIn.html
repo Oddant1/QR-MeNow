@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='generic.css') }}">
   </head>
    <body>
-    <nav class="nav-bar">
-        <a class="item" href="/">Home</a>
-        <a class="item" href="/logIn">Log in</a>
-        <a class="item" href="/signUp">Create an account</a>
-        <a class="item" href="/enternew">New Entry</a>
-        <a class="item" href="/contactInfoList">View Contact Info List</a>
-        <a class="item" href="/genQRCode">Generate a new qrcode</a>
-        <a class="item" href="/storedQRCodes">Stored qrcodes</a>
-        <a class="item" href="/logout">Log out</a>
-    </nav>
-    <div class = "log in">
-                <h1>Log In</h1>
-                <form action = "{{ url_for('log_in') }}" method = "POST">
-                    <input type="text" name="username" id="username" placeholder="Username" required/>
-                    <br>
-                    <input type="password" name="password" id="password" placeholder="Password" required/>
-                    <br>
-                    <input type="submit" class="button" value="Log In"/>
-                </form>
-            </div>
+  	 <nav class="nav-bar">
+	   <a class="item" href="/">Home</a>
+	   <a class="item" href="/logIn">Log in</a>
+	   <a class="item" href="/signUp">Create an account</a>
+	   <a class="item" href="/enternew">New Entry</a>
+	   <a class="item" href="/contactInfoList">View Contact Info List</a>
+	   <a class="item" href="/genQRCode">Generate a new qrcode</a>
+	   <a class="item" href="/storedQRCodes">Stored qrcodes</a>
+	   <a class="item" href="/logout">Log out</a>
+	</nav>
+	<div class = "log in">
+				<h1>Log In</h1>
+			    <form action = "{{ url_for('log_in') }}" method = "POST">
+					<input type="text" name="username" id="username" placeholder="Username" required/>
+					<br>
+					<input type="password" name="password" id="password" placeholder="Password" required/>
+					<br>
+					<input type="submit" class="button" value="Log In"/>
+				</form>
+			</div>
+
 </body>
 </html>
