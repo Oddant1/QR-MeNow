@@ -6,17 +6,11 @@ import bcrypt
 import databaseOps
 import accountBackEnd
 
+# app set up
 app = Flask(__name__)
 qrcode = flask_qrcode.QRcode(app)
 app.secret_key = "912047fgdsbv8d90bvs7890vufds"
 app.permanent_session_lifetime = timedelta(minutes=5)
-
-
-# global var
-# homepageTemplate = "home.html"
-# newDatabaseEntryTemplate = "contact.html"
-# showResultTemplate = "result.html"
-# newQRCodeTemplate = "new-qr-code.html"
 
 
 @app.route('/')
@@ -73,7 +67,14 @@ def newContact():
 def newQRCode():
     if "user" in session:
         # returns the page for generating a new qr code
-        return render_template("genQRCode.html")
+        user = session["user"]
+        con = sql.connect("database.db")
+        con.row_factory = sql.Row
+        cur = con.cursor()
+        cur.execute("select fname, lname, phonenumber, addr, email from contacts WHERE userid = ?",
+                    (getUserId(user),))
+        rows = cur.fetchone()
+        return render_template("genQRCode.html", rows=rows)
     else:
         return redirect(url_for('log_in'))
 
@@ -130,24 +131,22 @@ def storedCodes():
     if "user" in session:
         user = session["user"]
         QRCode = databaseOps.getQrCode(getUserId(user))
+        if QRCode == None:
+            return render_template("storedQRCodes.html")
         return render_template("storedQRCodes.html", qrcodes=QRCode)
 
 
-# needs to be implimented with db back end now
-# @app.route('/deleteQRCode', methods=['POST'])
-# def deleteCode():
-#     # This is a bit fragile but eh it works for now
-#     args = list(request.form.keys())
-#     index = int(args[0]) - 1
-#     code = QRCodes[index]
-#     QRCodes.remove(code)
-#     return render_template("storedQRCodes.html", qrcodes=QRCodes)
+@app.route('/deleteQRCode', methods=['POST'])
+def deleteCode():
+    user = session["user"]
+    userId = getUserId(user)
+    databaseOps.deleteQrCodeFromDB(userId)
+    return render_template("storedQRCodes.html")
 
 
 @app.route('/addRecord', methods=['POST', 'GET'])
 def addRecord():
     if "user" in session:
-
         user = session["user"]
         if request.method == 'POST':
             firstName = request.form['firstName']
@@ -161,7 +160,6 @@ def addRecord():
                                                                   email)
             print(databaseReponseMessage)
             return redirect(url_for('home'))
-
     else:
         return redirect(url_for('log_in'))
 
@@ -175,7 +173,7 @@ def listContactInfo():
         cur = con.cursor()
         cur.execute("select fname, lname, phonenumber, addr, email from contacts WHERE userid = ?", (getUserId(user),))
         rows = cur.fetchone()
-        print(rows[::])
+        print(rows['fname'])
         return render_template("listAllEntries.html", rows=rows)
     else:
         return redirect(url_for('log_in'))
