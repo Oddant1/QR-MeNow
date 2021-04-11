@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <title>QR-MeNow</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='homePage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='generic.css') }}">
   </head>
    <body>
         <nav class="nav-bar">
@@ -19,5 +19,6 @@
         </nav>
       <img style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="{{ qrcode( qrString ) }}">
       <h2><a href = "\">go back to home page</a></h2>
+
    </body>
 </html>
