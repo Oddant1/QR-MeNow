@@ -84,6 +84,16 @@ def addDatabaseEntry(userId, firstName, lastName, phonenumber, address, email):
         return returnMessage
 
 
+def getUserID(username):
+    try:
+        with sql.connect("database.db") as con:
+            cur = con.cursor()
+            userId = cur.execute("SELECT userid "
+                                 "FROM users WHERE username = ?", (username,)).fetchone()[0]
+            return userId
+    except Exception as e:
+        print(e)
+
 def deleteQrCodeFromDB(userId):
     con = sql.connect("database.db")
     con.row_factory = sql.Row
