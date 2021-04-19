@@ -18,9 +18,9 @@
            <a class="item" href="/logout">Log out</a>
         </nav>
         {% for code in qrcodes %}
-        <img class="centered" src="{{ qrcode(code) }}">
+        <img style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="{{ qrcode(code) }}">
         <br>
-        <div class="fillform">
+        <div style="text-align: center;">
         <form action="/deleteQRCode" method="post">
             <input type="submit" name="{{loop.index}}" value="Delete"/>
         </form>
@@ -28,5 +28,6 @@
         <br>
         <br>
         {% endfor %}
+        <h2><a href="\">go back home</a></h2>
     </body>
 </html>
