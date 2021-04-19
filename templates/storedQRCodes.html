@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-		<title>QR-MeNow</title>
-		<link rel="stylesheet" href="{{ url_for('static',filename='homePage.css') }}">
-	</head>
-		<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>QR-MeNow</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='generic.css') }}">
+    </head>
+        <body>
         <nav class="nav-bar">
            <a class="item" href="/">Home</a>
            <a class="item" href="/logIn">Log in</a>
@@ -18,9 +18,9 @@
            <a class="item" href="/logout">Log out</a>
         </nav>
         {% for code in qrcodes %}
-        <img class="centered" src="{{ qrcode(code) }}">
+        <img style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="{{ qrcode(code) }}">
         <br>
-        <div class="fillform">
+        <div style="text-align: center;">
         <form action="/deleteQRCode" method="post">
             <input type="submit" name="{{loop.index}}" value="Delete"/>
         </form>
@@ -28,5 +28,6 @@
         <br>
         <br>
         {% endfor %}
+        <h2><a href="\">go back home</a></h2>
     </body>
 </html>
