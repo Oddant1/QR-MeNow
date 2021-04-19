@@ -198,6 +198,7 @@ def getUserId(username):
         return redirect(url_for("log_in"))
 
 
+
 if __name__ == '__main__':
     # Create database if not already created
     try:
